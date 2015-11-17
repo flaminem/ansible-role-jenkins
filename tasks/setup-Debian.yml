@@ -12,6 +12,9 @@
     repo: "deb http://pkg.jenkins-ci.org/debian binary/"
     state: present
     update_cache: yes
+  environment:
+    http_proxy: "{{http_proxy}}"
+    https_proxy: "{{http_proxy}}"
 
 - name: Ensure Jenkins is installed.
   apt: pkg=jenkins state=installed
